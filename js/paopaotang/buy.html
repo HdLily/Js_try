@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+         const oSelect = document.querySelector('#colorSelect');
+         const oNumInput = document.querySelector('#numInput');
+         const oColorSpan = document.querySelector('#color');
+         const oNumSpan = document.querySelector('#num');
+
+        oSelect.addEventListener('change', function (event) {
+            showChooseResult();
+            console.log(oSelect.value);
+        }, false);
+        oNumInput.addEventListener('input', function (event) {
+            showChooseResult();
+        })
+
+            function showChooseResult() {
+                const strColor = oSelect.value;
+                oColorSpan.innerHTML = strColor;
+                const strNum = oNumInput.value;
+                oNumSpan.innerHTML = strNum;
+                // document.getElementById('addToCarts').innerHTML = strColor;
+                // document.getElementById('addToCarts').innerHTML = strNum;
+            }
+
+    </script>
+</head>
+<body>
+    
+    <span>选择颜色:<select id="colorSelect">
+        <option value="red">红色</option>
+        <option value="blue">蓝色</option>
+    </select> 
+    </span>
+
+    <span>输入购买的数量：<input type="number" name="number" onchange="myFunction()" id="numInput"/></span>
+
+    <p>您选择了颜色：</p>
+    <p id="color"></p>
+    <p>您输入了数量：</p>
+    <p id="num"></p>
+
+    <button id="addToCarts" onclick="myFunction()">加入购物车</button>
+</body>
+
+
+
+</html>
